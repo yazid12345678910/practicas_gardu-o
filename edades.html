@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clasificador de edad</title>
+</head>
+<body>
+    <h1>Introduce tu edad</h1>
+    <form id="formulario">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" min="0" step="1" required>
+        <button type="submit">Consultar</button>
+    </form>
+    <p id="resultado" role="status"></p>
+    <script>
+        document.getElementById("formulario")
+            .addEventListener("submit", function(evento) {
+                evento.preventDefault();
+                const valor = document.getElementById("edad").value;
+                const edad = Number(valor);
+                let mensaje;
+                if (valor.trim() === "" || !Number.isInteger(edad) || edad < 0) {
+                    mensaje = "Introduce una edad válida.";
+                } else if (edad > 50) {
+                    mensaje = "Es adulto mayor de 50 años.";
+                } else if (edad > 20) {
+                    mensaje = "Es mayor de 20 años.";
+                } else if (edad < 20) {
+                    mensaje = "Es menor de 20 años.";
+                } else {
+                    mensaje = "Tiene exactamente 20 años.";
+                }
+                document.getElementById("resultado").textContent = mensaje;
+            });
+    </script>
+</body>
+</html>

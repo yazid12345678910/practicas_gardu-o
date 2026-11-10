@@ -1,0 +1,26 @@
+<form>
+    <fieldset>
+        <legend>Opciones</legend>
+        
+        <!-- Selección de hora -->
+        <label for="hora">Elija una hora:</label> 
+        <input type="time" id="hora"> 
+        <br><br>
+
+        <!-- Selección múltiple corregida -->
+        <label for="sistema">Seleccione sistema(s):</label><br>
+        <select name="sistema" id="sistema" multiple>
+            <option value="windows">Windows</option>
+            <option value="mac">Mac</option>
+            <option value="linux">Linux</option>
+        </select>
+        <br><br>
+
+        <!-- Campos de texto con labels para mejor accesibilidad -->
+        <label>DNI: <input type="text" name="dni"></label><br><br>
+        <label>Nombre: <input type="text" name="nombre"></label><br><br>
+        <label>Apellidos: <input type="text" name="apellidos"></label><br><br>
+        <label>Teléfono: <input type="text" name="telefono"></label>
+        
+    </fieldset>
+</form>
